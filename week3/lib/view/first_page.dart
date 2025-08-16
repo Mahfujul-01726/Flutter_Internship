@@ -49,6 +49,26 @@ class _FirstPageState extends State<FirstPage> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
+                    Get.dialog(
+                      AlertDialog(
+                        title: Text('Dialog Box'),
+                        content: Text('This is a dialog box!'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Get.back(),
+                            child: Text('Close'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Text('Show Dialog'),
+                ),
+                SizedBox(height: 20),
+                Image.asset('assets/images/cat.jpeg', height: 150, width: 158),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
                     Get.to(() => SecondPage(counter: controller.counter));
                   },
                   child: const Text("Go to Second Page"),
